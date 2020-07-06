@@ -1,0 +1,47 @@
+!ML Workshop!
+- The standard release process does not work for ML type projects
+  - It is hard to make a good prediction model and explain WHY.
+- Data Science falls into an odd middleground
+  - It requires a balance of Hacking Skills; Math/Statistics; and Domain Knowledge
+- Discipline
+- Data, what is it. 
+  - Correctness
+    - Relations   -> Context    -> Priciples
+  - Understanding
+    - Information -> Knowledge  -> Wisdom
+  - Information became Knowledge when you decided to wear a sweater.
+- Wasting time
+  - Rule number 1: Ensure data quality.
+  - Make sure you focus on metadata (data 'bout data)
+- Data modeling changes
+  - Traditional relational dbs reach limitations in terms of ML
+  - Avoid RDD (resume driven development)
+  - Mapping of all of the data required for the query you are looking for will make the process easier to navigate.
+- Quote: Gambling and the lotery are taxes for people who are bad at Math
+
+Predictions
+If we do well on predicting one subset of data but poorly on another, there is a chance that our prediction engine is flawed
+
+!Find a balance of how many datapoints that you want to evaluate
+Too little questions result in inaccurate predictions due to more volatile criteria
+  - Slide 192
+Too many questions results in memorizing a dataset rather than learning the patterns
+  - Overfitting data
+  - Slide 194
+
+  Bias Variance Tradeoff
+  - There is no model that does better in every other case.
+
+ Maiyes
+ - Language based 
+
+ KNN
+
+Descision Tree
+  - Tree based classifier
+  - Ask the most relevant questions first to get the more general results
+
+http://www.r2d3.us/?from=@
+http://setosa.io/conditional/
+https://gist.github.com/bsletten/9a71a1a9ef7c8006dc3ee47b6e0b1f62
+

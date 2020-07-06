@@ -1,0 +1,77 @@
+// by Venkat Subramaniam
+Java's answer for async functionality
+What is difference between Reactive programming vs Fibers
+- Reactive is scaling services
+- Fibers scales servers
+
+Currently not existant in any LTS release.
+If you want to use Project Loom you need to download the newest development release of Java
+
+Single threaded development ~= Happy land
+
+"How many threads you should use, not how many threads can you use"
+
+Threads by nature are extremely intensive
+
+number of cores / blocking factor
+  - blocking factor: 0 <= blocking factor < 1
+
+also depends of memory
+
+Threads are fundementally flawed. 
+- This is due to them blocking and eating up memory for potentially wasted processing.
+- He ran 4000. When scaling to 5000 threads it ran into an OOM err
+
+Continuations
+- You can free up on exit points in execution.
+- Gives a flow of control. Pick up where you left off.
+- You can use a yield() call to break from the current method to perform work elsewhere.
+- This will allow processed to continue without blocking functionality
+
+task1() {
+  print(enter 1);
+  yield();
+  print(exit 1)
+}
+task2() {
+  print(enter 2);
+  yield();
+  print(exit 2)
+}
+
+main(...) {
+  task1()
+  task2()
+}
+
+//result
+enter 1
+enter 2
+exit 1
+exit 2
+
+// all in one thread and non-blocking
+
+Fibers
+- super lightweight threads
+- Threads in threads per say
+- managed by the JVM and not the OS like currently existing threads do.
+- part of java lang
+  - This is so fundemental that oracle made it CORE to the package hierarchy
+- Fibers in essence are logical threads managed within a thread. Managed by that thread.
+- As a result of Fibers we will sadly require less servers.
+- Fibers required changes on all levels to specify whether or not a function is blocking.
+ - It may or may not block
+
+ "Fibers are seamless and that is a problem"
+ - There are no visual ques that exist to tell you that you are using a fiber.
+ - If you run 16 fibers on an 8 core machine and an each executes an http request.
+  - It will block at 8 fibers though the fibers should not be bound as so.
+  - this is due to the http call being blocking although the fiber is not.
+
+No need to set thread size with this.
+
+Extremely scalable with IO operation, not so much with Computational heavy processes.
+This is not around today.
+Possible release is 2022. 
+Takes time to integrate 2023.

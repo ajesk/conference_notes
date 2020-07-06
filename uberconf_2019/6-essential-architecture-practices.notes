@@ -1,0 +1,47 @@
+// by Mark Richards
+There is no such thing as a best practice!!!
+  - "What works for you might not work for me"
+
+# Effective practives for architectural structure
+Choose domain partitioning over technical partitioning:
+  - Technical partitioning:
+    - Layered architecture example = presentation -> bussiness -> services -> persistence -> database
+    - The customer domain is everywhere and thus changes need to be implemented everywhere
+  - Domain partitioning:
+      | customer ui | | payment ui | | shipping and tracking |
+            |               |                |          |
+            V               V                V          V     
+      |             | |            | |           |  |        |
+            \               |              /            /
+             V              V             V            V
+                            DB
+    - Your deployment footprint is much smaller
+    - Modular monolith
+Leverage the Law of demeter:
+  "a service or component should have limited knowledge of other components"
+  - Jdepend
+  - ndepend
+
+Leverage modularity and sacrificial architecture:
+  - There is a martin fowler article on this.
+  - This is the idea of creating services in a way where we can easily remove components which are not needed.
+
+# Effect practives for architectural processes
+Focus on bussiness drivers first architecture second:
+  - Not doing this is an anti-pattern
+    - "putting the cart before the horse"
+  - Ask not what your architecture can do for you; but what you can do for your architecture
+  - Make sure to know what the problem is before you want a specific architecture
+
+Leverage architecture decision record to emphasize the why over the how:
+  - Understanding on all levels is an excellent motivator
+  !The real business of it! - Book
+  [√] Title
+  [√] Status - forces criteria for knowing when an architect must seek approval for a decision
+  [√] Context - description of the proplem and alternative solutions
+  [√] Decision - The actual choices
+  [√] Consequences - the end results
+
+Use automated architectural governance to ensure compliance:
+- architectural fitness function
+  - see notes for evolutionary architecture

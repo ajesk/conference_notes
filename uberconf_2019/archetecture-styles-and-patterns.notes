@@ -1,0 +1,192 @@
+// by Niel Ford
+// the guy who matches sneakers and glasses
+Top level partitioning:
+- Front end in the Front
+- Back end in the Back
+- i.e. Each domain is a singular portion
+
+Domain partitioning:
+- Close to todays concept of microservices.
+- Knowledge domains are contained withing packages.
+
+Architectual Quantum:
+How to think of things that are connected together
+
+Layered Architecture:
+- Shows off a separation of concernsl
+// Traditional 
+-------------------
+Presentation        
+------------------- |
+Bussiness           V
+------------------- |
+Persistance         V
+------------------- |
+Database            V
+-------------------
+
+You can use a hybrid variant where you add a service layer.
+- Good at first
+- Can turn into a sinkhole later
+
+-------------------
+[x] Presentation          Closed
+    ------------------- |
+[x] Bussiness           V 
+    ------------------- |
+[√] Service      |      |
+    -------------|----- |
+[x] Persistance  |      V
+    -------------|----- |
+[x] Database     V      V
+-------------------
+
+Patern Governance:
+Make sure that your patterns are enforced so there is a direct separation of concerns.
+In the example above if we went from presentation directly to the DB that would be invalid
+
+Microkernel Archetecture:
+A simple architecture to run in a contained system which utilizes plugins to add functionality
+Browser is an example of this or Eclipse...
+Eclipse actually takes this to the extreme to a point where it at one point proke java
+Easy to add functionality and it is very modularized on its basic nature
+  [√] modularity
+  [√] simplicity
+  [√] cost
+  [√] adaptability
+  [√] evolvability
+  [√] agility
+  [√] testable
+  [√] deployability
+  [x] still a monolithic Archetecture
+
+*DISTRIBUTED SYSTEMS*
+Event driven archetecture:
+[√] modularity
+[√] fault tolerance
+[√] scalability
+[√] adaptability
+[√] evolvability
+[√] agility
+[√] testable
+
+  Broker topology:
+    - Contains a chain of queues which will have dispatchers for further event messages
+
+    // Basic workflow
+    [event] -> {queue} -> [handler] -> {queue} -> [handler]
+                              |
+                              V
+                            {queue} -> [handler]
+
+    - If something goes wrong at any part of this process, what do you do?
+      - You have to handle this!!
+    - This does allow you to add nodes very easily
+    - More performant of the two
+
+  Mediator topology:
+    - Everything goes through a transactional event mediator.
+    - Called orchestration by a singular entity
+
+    // basic workflow
+    [event] -> {queue} -> [mediator] =====> {event channel}
+                            |   |
+        {event channel} <===|   |===> {event channel}
+
+    - This is much easier to debug since there are limited functional handlers
+    - Rougher to add more function. Multiple touch points needed
+    - Slower due to a bulkier system on a single node point
+
+Enterprise Service Bus [ESB] Driven SOA:
+- Was popular with business 10-15 years ago.
+- The idea was ultimate reusibility
+  - The flaw with this system is that needs change fast to the point where reusibility on some level will be broken.
+- Extremely string in taxonomy
+- Resources as well as functionality are heavily shared!
+- !THIS BREEDS THE IDEA OF A CUSTOMER SERVICE MODULE!
+  - Coupling of all code becomes so tight that it is impossible to manuver in
+- This was the precursor to modern day microservices.
+- *Exit strategery*
+  - Use integration hubs as a window into this world
+
+---------------------------------------------------------
+Bussiness Services        
+---------------------------------------------------------
+Message Bus
+    | Process Choreographer
+    | Service Orchestrator
+---------------------------------------------------------
+Enterprise Services [ES] [ES] [ES] [ES] [ES] [ES]
+---------------------------------------------------------
+Application Services || Infrastructure Services
+---------------------------------------------------------
+
+[√] Integration
+[√] Integration
+[√] Orchetration
+[x] Distribute Balls of Mud
+
+Serverless:
+"It is someone else's computer, what can go wrong"
+- Back end as a service:
+  - Everything is pretty much done for you.
+  - Out of box Services
+  - Checkout, cart, catalog
+- Functions as a service
+  [√] agility
+  [√] lack of (apparent) infrastructure
+  [√] discrete
+  [x] Hard to track
+  [x] Not to flexible
+
+*ASIDE*: The 'Last 10% Trap'
+  80% is Easy             Next 10% is rough
+|========================|==|==|
+                              Last 10% F**KN SUCKS (and may be impossible)
+
+- Good at general fast work, bad for long term solutions
+- Serverless mimics issues with the last 10% trap
+  [√] agility
+  [√] inverse conway maneuver
+  [√] modularity
+  [√] deployability
+  [√] restructurability
+
+Microservices:
+- Domain driven design, except... don't reuse, and keep independance/separation fo concerns
+- Each module are seperated deployed and highly automated.
+- You are trying to keep a bounded context, not to make everything absurdly granular
+- Reuse is a focus (didn't I say it wasn't)
+  - The reuse is on the service level, not the function level
+- A way to make all of your services to have some desired shared function (logging monitoring)
+  - Service Template (or a sidecar)
+- "Microservice is a label not a..."
+- Need to acknowledge that you will be eventual consistent
+- API Layer
+  - Allows you to abstract the services to make them more coherent.
+-Not making a diagram for this sorry-
+
+  [√] modularity
+  [√] agility 
+  [√] fault-tolerant
+  [√] scalable
+  [√] testablity
+  [√] deployability
+  [√] evolvability
+  [x] Most difficult to manuver around
+
+Service based archetecture:
+- Compromises
+  - Service granularity (fatter chunks)
+  [√] performant
+  [√] robust
+  [√] scope
+
+- Database isolation (the ultimate coupling point)
+
+*Oddities*
+Space based archetecture:
+An archetecture built for an elastic scale
+
+LMAX:
+

@@ -1,0 +1,94 @@
+// by Venkat Subramanium
+Why do we need modules:
+- Smaller is better for performance's sake
+- Modules enforces name uniqueness
+- Modules enforce strict dependency enforcement
+- Modules enforce a dependency graph of dependencies
+
+Module:
+- simply a group of things with a name in the same way as a package
+- !don't name your package the same name as your module!
+- modules require other modules
+
+Creating these things:
+- make java file
+- !important! it must be named module-info.java
+
+// module-info.java for module1
+[java] 
+module com.aaron.a.module1 {}
+[end]
+
+To invoke
+[sh]
+java -modulepath com.aaron.a.module/com.aaron.a.classpath
+# or
+java -m com.aaron.a.module/com.aaron.a.classpath
+[end]
+
+Now with modules in java, you need to export a class for use externally
+// module 1
+[java] 
+module com.aaron.a.module1 {
+  requires com.aarom.a.class1;
+}
+[end]
+
+// module 2
+[java] 
+module com.aaron.a.module2 {
+  exports com.aarom.a.class2;
+}
+[end]
+
+unless you are export and require a class, you cannot use it.
+
+You can access other from another class returned from an exported class ONLY through an interface.
+
+!DO NOT USE REFLECTION  TO ACCESS AN OBJECT'S METHODS!
+
+// This will allow reflections
+[java] 
+module com.aaron.a.module2 {
+  opens com.aarom.a.class2;
+}
+[end]
+
+How to get there:
+Go from java 8 to 12 don't migrate incrementally.
+
+In java 9 everything is a module
+Any jar running from a classpath runs from an unnamed module.
+- All classpath jars in the project run from this unnamed module
+
+
+!Modules can't share packages!
+But what about unit tests vs production code???
+Patch module is an option
+- only use this in very specific situations like this.
+
+Visibility
+[√] modules     ----->  classpath
+[x] classpath   ----->  modules
+
+Explicit modules exports only what it specifies
+An automatic module exports everything it contains
+
+Module's cannot have numbers or - in them
+They will create automatic names which can be hard to track.
+
+Make sure you give the modules a decent name
+
+Legacy to modules:
+1. Run legacy code with classpath with old java :)
+2. Run legacy code with classpath with modern java :/
+  2a. Fix it right there
+3. Run project with modern java with module path
+4. Give names to all automatic modules
+5. Convert from top to bottom to explicit modules.
+6. After you fully upgrade. Do the dependencies
+
+Why you cannot remain:
+!THIS MUST BE DONE WE HAVE BEEN WARNED!
+- When dependancies upgrade to modules, you can no longer utilize thier libraries unless you yourself are explicit
+- If we don't do this now we will hurt more later

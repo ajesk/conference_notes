@@ -1,0 +1,77 @@
+// by Neal Ford
+https://evolutionaryarchitecture.com
+
+The ilities of software architecture.
+- The top levels goals to strive for
+- a11y as an example
+
+Change
+  Bussiness Driven Changes
+  - Sales change, aquisition, marketing change
+  - Domain Driven
+
+  Technology Driven Change
+  - Tech moves fast
+  - Dynamic Equilibrium
+  - Docker is an example of a HUGE tech change
+
+  "Everything changes all the time"
+
+How is long term planning possible with such changes taking place
+  By default it is not
+  Instead you need to build architecture evolution into a platform
+
+Second-order effect = the act of re-architecting a project over time
+
+!Evolutionary architecture!
+An evolutionary architecture supports guided, incremental change across multiple dimensions.
+  GUIDED
+    !architecture fitness function!
+    eg: Monitors, Unit testing, metrics, chaos engineering...
+
+    Fitness functions are similar to the mandated checklists that Airplanes pilots must use to organize their jobs
+    
+    Atomic - looks at a single characteristic
+      - "Devops monitoring"
+    Holistic - looks at a grouping of characteristics (security as it relates to performance)
+      - Chaos Monkey or the Simian Army
+        Inject chaos!!!
+    Automated/Manual testing
+    Triggered or Continuous functions
+    Dynamic/Static - "test both 1 and 1 million concurrent users"
+    Temporal - try at different times
+
+    Attributes of fitness functions
+    - Architectural characteristic
+      - Domain agnostic
+    - Problem Domain
+      - requires more nuanced knowledge
+
+    Avoid cyclical dependencies
+    !!!!Use jdepend to analyze cyclical dependencies.!!!!
+
+    Coupling fitness functions
+    !Use JavaPackage to detect importing all of 'web.*' as an example.!
+
+    the goal is to remove the term "maintainable?"
+      !Governing code quality!
+        - Cyclomatic complexity
+        "Bad developers will move heaven and earth to do the wrong thing"
+        !important! https://archunit.org - junit tool that can check code quality and fail depending.
+          - Developers cannot bypass code quality rules going forward
+      
+    Worry about page weight. "Can you remove react from an absurdly simple microservice?"
+      - Netflix did with thier login page to increase responsiveness.
+
+    Track your deployment statuses and why.
+      !do we track jenkins failures at iCIMS?!
+
+    Licences for dependencies change, open sourced => proprietary
+      - You can create a tool that tracks the legal wording for changes that legal departments should pay attention to.
+  
+  INCREMENTAL CHANGE
+    
+
+
+  MULTIPLE DIMENSIONS
+    The pragmatic awareness

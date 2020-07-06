@@ -1,0 +1,22 @@
+// by Venkat
+https://github.com/venkats/uberconf071919
+
+Part 0 Design Patterns and Principles:
+Developers have a fascination towards principles.
+Principles that drive these patterns are often forgotten
+Challenges with patterns.
+  - ??? missed this Part
+Identifying patterns
+Influence of functional style
+Some principles and patterns.
+  see "./core-software-design-principles.notes"
+
+Lambda Expressions as a design tool
+Strategy pattern - look at the different backflow patterns from reactive programming.
+You can use a functional object as a differentiator for execution paths.
+  - As an example you can use it as a param to differentiate between odd/even checks.
+
+[java]
+  getNumbers({4, 3, 6, 6}, Selector::getOdd);
+[end]
+

@@ -1,0 +1,87 @@
+// by Venkat Subramanium
+"What are the things that you can do to become a better architect?"
+Who is an archetect really?
+  - Aaron: "a builder"
+  - Venkat: "I really hate architects"
+  - !read 'Who needs an architect?' by Martin Fowler!
+    -> -> http://files.catwell.info/misc/mirror/2003-martin-fowler-who-needs-an-architect.pdf
+    "A good architect will try to put themselves out of work"
+
+1. Be a mentor, not a tor-mentor
+  - Make sure to interact with people based upon expertise and don;t try to be the one expertise 
+  - Nurturing is your professional responsibility
+  - "Knowledge transfer" is a useless term
+2. Criticize Ideas, Not people
+  - !NEVER NEVER INSULT ANOTHER DEV!
+  - Use 'we' instead of 'me'
+  - https://www.triballeadership.net/
+3. Architecting is evaluating tradeoffs
+  - Debating with knives:
+    - Use the knife directions on a table to signify your oppinions.
+    - Start by having knives pointed to one person.
+    - Whoever the knife is facing to has to argue for.
+    - Whoever the knife is facing away from has to argue against.
+    - Switch the knives around and argue the opposite
+    - Someone who cannot argue both for and against has a bias.  
+4. Guide and don't dictate
+  - Make sure everyone is a part of the process of architecting and not an innocent bistander.
+    - (This is a contradition cause they really aren't innocent because they are actually complacent) -- Aaron
+5. You may discover things from this experience too
+  - By encouraging people to dictate the direction of this work they may bring back new info that helps everyone learn
+6. Practice collective ownership
+  - Don't specialize, diversifize *this is a point which is really easy to disagree with*
+  - "Make sure everyone is exposed to the other side"
+    - No front end vs back end
+  - It is ok if you as the architect don't know everything.
+7. Reduce truck factor
+  - Truck factor: "The ammount of people that need to be hit by a truck for a project to fail"
+  - Avoid territorial ownership
+  - Cross-polinate across domains
+  - What may be boring and mundane to you, might be the most exciting thing to someone else.
+  - Also enforce maintainable code.
+8. Allow developers to figure it out
+  - The success depends on team members being on board with your plan
+  - Whether or not something is good. Let a developer figure out whether or not it is
+    - You either get thier idea or they learn something new. A true win-win
+9. It should be safe to be honest
+  - Don't ever talk bad about anyone, this should be obvious, but we have a problem with removing this from the workplace
+  - once again: "Critique ideas and not people"
+  - "You become an expert by not hiding ignorance" --Venkat
+10. Time box your effort. 
+11. Focus on outcome and not process
+12. Prototyping beats any argument.
+  - a rock solid demo can allow you to show a team where the value lies.
+  - If you have an idea, maybe just build a rough model and let it speak for itself.
+13. Gain domain expertise
+  - Learn your extended trade and how your product may be required.
+  - Three kinds of people:
+    - Those who know...
+      1. Software but not domain
+      2. Domain be not domain
+      3. both software and domain
+      4. ignore the 4th category...
+  - To make software extensible you need to learn the domain
+14. Learn to unlearn
+  - What are the practices that I should really try to stop performing?
+  - Unlearning is a tough deliberate activity.
+15. Diversify your Knowledge portfolio
+  - "Learn everything about something, and learn something about everything" --Tom Huxley
+  - Don't put all of your eggs in one basket. A wide breadth of knowledge will open new pathways.
+  - Pointed expertise leads to arrogance. 
+  - Learn a language every year (The pragmatic Programmer)
+    - not a related or similar one, but one that is different from anything that you have previously known.
+  - "The amount of time you need to learn something new is inversely proportional to the number of different things you have learned in the past few years." --Venkat
+16. Lead by example
+  - "Architectural committee is where innovation goes to die" --Venkat
+  - These committees are created, become an establishment, create rules and then enforce both the rules and the process required to change the rules.
+    - by nature alone they exclude everyone who is below the architect level position from the learning and thought process.
+  - When you have these committees they shut out the innovation of potentially ingenious solutions from other smart developers.
+17. Write code
+  - Avoid being a powerpoint architect, being in the trenches you will learn more 
+18. Every technical decision should habe an expiration label.
+  - Best practice is a negative term when you look at it in the right way.
+  - There aren't best practices only better ones
+19. Evolve the architecture
+  - Think about the requirements after delivery
+  - Mention a % confidence rather than a solid solutions
+    - this allows you to estimate a true estimation for the future improvements

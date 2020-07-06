@@ -1,0 +1,68 @@
+// Llewellyn Falco
+"Our code is just a big mess, and no one is happy working on it."
+  --Someone
+
+Most code bases are an old rusty car.
+
+What are the rules that you are going to have to give up in order to REBUILD a system.
+You can buy a new car, you cannot buy a new system and get everything you NEED
+Replacement doesn't always work very well.
+
+Be a boy scout:
+"Leave things better than you found them"
+Just a little bit better.
+
+Making code better is a slow process. 
+
+It is more important about where you start. 
+Do a little bit repetitavly
+
+* Pattern for working in legacy code *
+Step 1: Remove clutter
+  - 30% of your codebase is this.
+Step 2: Split long methods
+Step 3: Separate Patters
+Step 4: Extract Classes
+Step 5: Create Abstration
+Step 6: Add New Feature
+
+Infinite Tasks:
+On our board make up tasks to improve our team.
+Noone will say don't improve a system, but most will put forth 0% effort.
+
+With incremental improvment you can reduce infinite tasks
+
+Code Smells:
+  1. Clutter
+    a. Need to progressively Remove
+    b. Makes the time to find things more difficult.
+  2. Long Methods
+    a. use the extract method to pull out the "Paragraph" methods
+
+    7 Stages of naming
+
+    Missing       => Nonsense => Honest                 => Honest and Complete                =>
+    Block of code => Foo()    => doSomethingEvilToDB()  => parseXmlAndStore......AndProcess() =>
+
+    => Does the right thing             => Intent                 => Domain Abstration
+    =>  StoreFlightAndStartProcessing() => StartTrackingFlight()  => Service.add()
+
+What the code does vs what you think it should do is where the bugs lie. 
+    -Llewellyn Falco
+
+!Come up with a commit format for provable refactoring!
+
+10x Developer
+"There is a developer that does 10 times more than other develpers"
+This is not the case and you can use interest to prove this.
+
+Continous improvement does not look like much, but they pay it forward.
+
+The same thing can be put forward on learning and training. 
+
+Take 1 hour a day to learn something new.
+  - Watch a talk
+  - Read a book
+  - Make small improvements
+
+  Lean Coffeeeeee
